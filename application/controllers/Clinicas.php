@@ -18,6 +18,7 @@ class Clinicas extends CI_Controller
 	public function borrar($id_aj)
 	{
 		$this->Clinica->eliminar($id_aj);
+		$this->session->set_flashdata('alerta', 'Clinica eliminada exitosamente');
 		redirect("clinicas/index");
 	}
 	//Renderizacion de la vista nuevo de hospitales
@@ -38,6 +39,8 @@ class Clinicas extends CI_Controller
 			"longitud_aj" => $this->input->post("longitud_aj")
 		);
 		$this->Clinica->insertar($datosNuevoClinica);
+		//Definiendo mensaje de exito
+		$this->session->set_flashdata('alerta', 'Clinica registrada exitosamente');
 		redirect("clinicas/index");
 	}
 } //Cierre de  la clase

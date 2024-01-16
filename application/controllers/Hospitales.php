@@ -18,6 +18,7 @@ class Hospitales extends CI_Controller
 	public function borrar($id_hos)
 	{
 		$this->Hospital->eliminar($id_hos);
+		$this->session->set_flashdata("confirmacion","El hospital se ha eliminado exitosamente");
 		redirect("hospitales/index");
 	}
 	//Renderizacion de la vista nuevo de hospitales
@@ -37,6 +38,7 @@ class Hospitales extends CI_Controller
 			"longitud_hos" => $this->input->post("longitud_hos")
 		);
 		$this->Hospital->insertar($datosNuevoHospital);
+		$this->session->set_flashdata("confirmacion","El hospital se ha guardado exitosamente");
 		redirect("hospitales/index");
 	}
 } //Cierre de  la clase
