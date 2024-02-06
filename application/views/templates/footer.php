@@ -1,5 +1,5 @@
 </div>
-<div class="row p-3  bottom-0 right-0 left-0 w-100 m-0" style="display:flex; background-color: #2b3035; height:70px; justify-content: center; align-items:center; color:aliceblue; height:auto">
+<div class="row p-3  bottom-0 right-0 left-0 w-100 m-0 position-fixed" style="display:flex; background-color: #2b3035; height:70px; justify-content: center; align-items:center; color:aliceblue; height:auto">
 	<div class="col-md-4 text-center">
 		<h4 class="text-center"><strong>CONTACTOS</strong></h4>
 		<ul class="text-justify"> <strong>Celular:</strong> 0987002084</ul>

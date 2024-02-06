@@ -36,6 +36,9 @@
 					<li class="nav-item">
 						<a class="nav-link" href="<?php echo site_url('clinicas/index'); ?>">Clinicas</a>
 					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="<?php echo site_url('doctores/index'); ?>">Doctores</a>
+					</li>
 				</ul>
 			</div>
 		</div>

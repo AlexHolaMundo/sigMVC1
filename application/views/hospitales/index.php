@@ -19,6 +19,7 @@
 					<th class="text-center">TELEFONO</th>
 					<th class="text-center">LATITUD</th>
 					<th class="text-center">LONGITUD</th>
+					<th class="text-center">FOTO</th>
 					<th class="text-center">ACCIONES</th>
 				</tr>
 			</thead>
@@ -32,9 +33,18 @@
 						<td class="text-center"><?php echo $hospital->latitud_hos; ?></td>
 						<td class="text-center"><?php echo $hospital->longitud_hos; ?></td>
 						<td class="text-center">
-							<a href="<?php echo site_url('hospitales/borrar/') . $hospital->id_hos; ?>" class=" btn btn-outline-danger">
+							<?php if ($hospital->foto_hos != "") : ?>
+								<img src="<?php echo base_url('uploads/hospitales/') . $hospital->foto_hos; ?>" height="100px" width="100px" alt="">
+							<?php else : ?>
+								N/A
+							<?php endif; ?>
+						</td>
+						<td class="text-center">
+							<a href="<?php echo site_url('hospitales/borrar/') . $hospital->id_hos; ?>" class=" btn btn-outline-danger" title="Eliminar">
 								<i class="fa-solid fa-trash"></i>
-								Eliminar
+							</a>
+							<a href="<?php echo site_url('hospitales/editar/') . $hospital->id_hos; ?>" class=" btn btn-outline-warning" title="Editar">
+								<i class="fa-solid fa-pen"></i>
 							</a>
 					</tr>
 				<?php endforeach; ?>
