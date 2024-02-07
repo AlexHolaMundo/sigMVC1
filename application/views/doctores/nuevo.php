@@ -1,5 +1,5 @@
 <div class="container">
-	<form action="<?php echo site_url('doctores/guardar'); ?> " class="m-4" method="post" enctype="multipart/form-data">
+	<form action="<?php echo site_url('doctores/guardar'); ?> " class="m-4" method="post" enctype="multipart/form-data" id="formDoctores">
 		<h3 class="text-center">Registrar Doctor</h3>
 		<div class="row">
 			<div class="mb-3 col-md-3">
@@ -76,4 +76,13 @@
 			document.getElementById('longitudWATT').value=longitud;
 		});
 	}
+</script>
+<script>
+	$(document).ready(function () {
+  $('#carnetWATT').fileinput({
+    //showUpload: false,
+    //showRemove: false,
+    language: 'es',
+  })
+})
 </script>

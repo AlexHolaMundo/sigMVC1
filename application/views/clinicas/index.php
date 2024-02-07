@@ -70,31 +70,30 @@
 				</div>
 			</div>
 		</div>
-		<script>
-			function initMap() {
-				var coordenadaCentral = new google.maps.LatLng(-0.9171755208692692, -78.6328634793978);
-				var miMapa = new google.maps.Map(document.getElementById('clinicas'), {
-					center: coordenadaCentral,
-					zoom: 13,
-					mapTypeId: google.maps.MapTypeId.ROADMAP
-				});
-				<?php foreach ($listadoClinicas as $clinica) : ?>
-					var coordenadaTemporal = new google.maps.LatLng(
-						<?php echo $clinica->latitud_aj; ?>,
-						<?php echo $clinica->longitud_aj; ?>
-					);
-					var marcador = new google.maps.Marker({
-						position: coordenadaTemporal,
-						map: miMapa,
-						title: '<?php echo $clinica->nombre_aj; ?>',
-					});
-				<?php endforeach; ?>
-
-			}
-		</script>
 	<?php else : ?>
 		<div class="alert alert-danger">
 			No se encontro clinicas registradas
 		</div>
 	<?php endif; ?>
+	<script>
+		function initMap() {
+			var coordenadaCentral = new google.maps.LatLng(-0.9171755208692692, -78.6328634793978);
+			var miMapa = new google.maps.Map(document.getElementById('clinicas'), {
+				center: coordenadaCentral,
+				zoom: 13,
+				mapTypeId: google.maps.MapTypeId.ROADMAP
+			});
+			<?php foreach ($listadoClinicas as $clinica) : ?>
+				var coordenadaTemporal = new google.maps.LatLng(
+					<?php echo $clinica->latitud_aj; ?>,
+					<?php echo $clinica->longitud_aj; ?>
+				);
+				var marcador = new google.maps.Marker({
+					position: coordenadaTemporal,
+					map: miMapa,
+					title: '<?php echo $clinica->nombre_aj; ?>',
+				});
+			<?php endforeach; ?>
+		}
+	</script>
 </div>

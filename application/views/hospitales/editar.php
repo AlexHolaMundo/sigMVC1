@@ -1,5 +1,5 @@
 <div class="container">
-	<form action="<?php echo site_url('hospitales/actualizarHospital'); ?>" class="m-4" method="post" enctype="multipart/form-data">
+	<form action="<?php echo site_url('hospitales/actualizarHospital'); ?>" class="m-4" method="post" enctype="multipart/form-data" id="formHospitales">
 		<h3 class="text-center">Editar Hospital</h3>
 		<input type="hidden" name="id_hos" id="id_hos" value="<?php echo $hospitalEditar->id_hos ?>">
 		<div class="row">
@@ -19,13 +19,15 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-6">
+			<div class="col-md-12">
 				<div class="mb-3">
 					<label for="" class="form-label">Telefono</label>
 					<input type="text" class="form-control" id="telefono_hos" name="telefono_hos" placeholder="000 0000 0000" value="<?php echo $hospitalEditar->telefono_hos ?>">
 				</div>
 			</div>
-			<div class="col-md-6">
+		</div>
+		<div class="row">
+			<div class="col-md-12">
 				<div class="mb-3">
 					<label for="" class="form-label">Actualizar Fotografia (Opcional)</label>
 					<input type="file" class="form-control" id="nueva_foto_hos" name="nueva_foto_hos">
@@ -33,7 +35,6 @@
 				</div>
 			</div>
 		</div>
-
 		<div class="row">
 			<div class="mb-3 col-md-6">
 				<label for="" class="form-label">Latitud</label>

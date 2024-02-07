@@ -1,5 +1,5 @@
 <div class="container">
-	<form action="<?php echo site_url('hospitales/guardar'); ?>" class="m-4" method="post" enctype="multipart/form-data">
+	<form action="<?php echo site_url('hospitales/guardar'); ?>" class="m-4" method="post" enctype="multipart/form-data" id="formHospitales">
 		<h3 class="text-center">Registrar Hospital</h3>
 		<div class="row">
 			<div class="col-md-6">
@@ -16,13 +16,15 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-6">
+			<div class="col-md-12">
 				<div class="mb-3">
 					<label for="" class="form-label">Telefono</label>
 					<input type="text" class="form-control" id="telefono_hos" name="telefono_hos" placeholder="000 0000 0000" >
 				</div>
 			</div>
-			<div class="col-md-6">
+		</div>
+		<div class="row">
+			<div class="col-md-12">
 				<div class="mb-3">
 					<label for="" class="form-label">Fotografia</label>
 					<input type="file" class="form-control" id="foto_hos" name="foto_hos" accept="image/*" >
@@ -72,4 +74,13 @@
 			document.getElementById('longitud_hos').value = longitud;
 		});
 	}
+</script>
+<script>
+	$(document).ready(function () {
+  $('#foto_hos').fileinput({
+    //showUpload: false,
+    //showRemove: false,
+    language: 'es',
+  })
+})
 </script>

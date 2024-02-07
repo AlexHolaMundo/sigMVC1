@@ -70,29 +70,29 @@
 				</div>
 			</div>
 		</div>
-		<script>
-			function initMap() {
-				var coordenadaCentral = new google.maps.LatLng(-0.9171755208692692, -78.6328634793978);
-				var miMapa = new google.maps.Map(document.getElementById('reporteMapa'), {
-					center: coordenadaCentral,
-					zoom: 13,
-					mapTypeId: google.maps.MapTypeId.ROADMAP
-				});
-				<?php foreach ($listadoHospitales as $hospital) : ?>
-					var coordenadaTemporal = new google.maps.LatLng(
-						<?php echo $hospital->latitud_hos; ?>,
-						<?php echo $hospital->longitud_hos; ?>);
-					var marcador = new google.maps.Marker({
-						position: coordenadaTemporal,
-						map: miMapa,
-						title: "<?php echo $hospital->nombre_hos; ?>",
-					});
-				<?php endforeach; ?>
-			}
-		</script>
 	<?php else : ?>
 		<div class="alert alert-danger">
 			No se encontro hospitales registrados
 		</div>
 	<?php endif; ?>
+	<script>
+		function initMap() {
+			var coordenadaCentral = new google.maps.LatLng(-0.9171755208692692, -78.6328634793978);
+			var miMapa = new google.maps.Map(document.getElementById('reporteMapa'), {
+				center: coordenadaCentral,
+				zoom: 13,
+				mapTypeId: google.maps.MapTypeId.ROADMAP
+			});
+			<?php foreach ($listadoHospitales as $hospital) : ?>
+				var coordenadaTemporal = new google.maps.LatLng(
+					<?php echo $hospital->latitud_hos; ?>,
+					<?php echo $hospital->longitud_hos; ?>);
+				var marcador = new google.maps.Marker({
+					position: coordenadaTemporal,
+					map: miMapa,
+					title: "<?php echo $hospital->nombre_hos; ?>",
+				});
+			<?php endforeach; ?>
+		}
+	</script>
 </div>

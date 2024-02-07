@@ -1,40 +1,40 @@
 <div class="container">
-	<form action="<?php echo site_url('clinicas/guardar'); ?>" class="m-4" method="post" enctype="multipart/form-data">
+	<form action="<?php echo site_url('clinicas/guardar'); ?>" class="m-4" method="post" enctype="multipart/form-data" id="formClinicas">
 		<h3 class="text-center">Registrar Clinica</h3>
 		<div class="row">
 			<div class="mb-3 col-md-6">
 				<label for="" class="form-label">Nombre</label>
-				<input type="text" class="form-control" id="nombre_aj" name="nombre_aj" placeholder="SANTA CECILIA">
+				<input type="text" class="form-control" id="nombre_aj" name="nombre_aj" placeholder="SANTA CECILIA" required>
 			</div>
 			<div class="mb-3 col-md-6">
 				<label for="" class="form-label">Ruc</label>
-				<input type="text" class="form-control" id="ruc_aj" name="ruc_aj" placeholder="0000000000000">
+				<input type="text" class="form-control" id="ruc_aj" name="ruc_aj" placeholder="0000000000000" required>
 			</div>
 		</div>
 		<div class="row">
 			<div class="mb-3 col-md-6">
 				<label for="" class="form-label">Propietario</label>
-				<input type="text" class="form-control" id="propietario_aj" name="propietario_aj" placeholder="ALGUIEN GENIAL">
+				<input type="text" class="form-control" id="propietario_aj" name="propietario_aj" placeholder="ALGUIEN GENIAL" required>
 			</div>
 			<div class="mb-3 col-md-6">
 				<label for="" class="form-label">Fecha de Fundacion</label>
-				<input type="date" class="form-control" id="fechafundacion_aj" name="fechafundacion_aj">
+				<input type="date" class="form-control" id="fechafundacion_aj" name="fechafundacion_aj" required>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-12">
 				<label for="" class="form-label">Fotografia</label>
-				<input type="file" accept="image/*" name="fotografia" id="fotografia" class="form-control">
+				<input type="file" accept="image/*" name="fotografia" id="fotografia" class="form-control" required>
 			</div>
 		</div>
 		<div class="row">
 			<div class="mb-3 col-md-6">
 				<label for="" class="form-label">Latitud</label>
-				<input type="text" class="form-control" id="latitud_aj" name="latitud_aj" placeholder="000000000000000" readonly>
+				<input type="text" class="form-control" id="latitud_aj" name="latitud_aj" placeholder="000000000000000" readonly required>
 			</div>
 			<div class="mb-3 col-md-6">
 				<label for="" class="form-label">longitud</label>
-				<input type="text" class="form-control" id="longitud_aj" name="longitud_aj" placeholder="000000000000000" readonly>
+				<input type="text" class="form-control" id="longitud_aj" name="longitud_aj" placeholder="000000000000000" readonly required>
 			</div>
 		</div>
 		<div class="row">

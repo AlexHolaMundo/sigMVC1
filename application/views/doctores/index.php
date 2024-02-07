@@ -55,7 +55,7 @@
 			</tbody>
 		</table>
 
-<!-- Modal -->
+		<!-- Modal -->
 		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog modal-xl">
 				<div class="modal-content">
@@ -74,29 +74,29 @@
 				</div>
 			</div>
 		</div>
-		<script>
-			function initMap() {
-				var coordenadaCentral = new google.maps.LatLng(-0.9171755208692692, -78.6328634793978);
-				var miMapa = new google.maps.Map(document.getElementById('reporteMapa'), {
-					center: coordenadaCentral,
-					zoom: 13,
-					mapTypeId: google.maps.MapTypeId.ROADMAP
-				});
-				<?php foreach ($listadoDoctores as $doctor) : ?>
-					var coordenadaTemporal = new google.maps.LatLng(
-						<?php echo $doctor->latitudWATT; ?>,
-						<?php echo $doctor->longitudWATT; ?>);
-					var marcador = new google.maps.Marker({
-						position: coordenadaTemporal,
-						map: miMapa,
-						title: "<?php echo $doctor->nombreWATT; ?>",
-					});
-				<?php endforeach; ?>
-			}
-		</script>
 	<?php else : ?>
 		<div class="alert alert-danger">
 			No se encontro doctores registrados
 		</div>
 	<?php endif; ?>
+	<script>
+		function initMap() {
+			var coordenadaCentral = new google.maps.LatLng(-0.9171755208692692, -78.6328634793978);
+			var miMapa = new google.maps.Map(document.getElementById('reporteMapa'), {
+				center: coordenadaCentral,
+				zoom: 13,
+				mapTypeId: google.maps.MapTypeId.ROADMAP
+			});
+			<?php foreach ($listadoDoctores as $doctor) : ?>
+				var coordenadaTemporal = new google.maps.LatLng(
+					<?php echo $doctor->latitudWATT; ?>,
+					<?php echo $doctor->longitudWATT; ?>);
+				var marcador = new google.maps.Marker({
+					position: coordenadaTemporal,
+					map: miMapa,
+					title: "<?php echo $doctor->nombreWATT; ?>",
+				});
+			<?php endforeach; ?>
+		}
+	</script>
 </div>

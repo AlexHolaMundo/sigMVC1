@@ -1,5 +1,5 @@
 <div class="container">
-	<form action="<?php echo site_url('clinicas/actualizarClinica'); ?>" class="m-4" method="post" enctype="multipart/form-data">
+	<form action="<?php echo site_url('clinicas/actualizarClinica'); ?>" class="m-4" method="post" enctype="multipart/form-data" id="formClinicas">
 		<h3 class="text-center">Editar Clinica</h3>
 		<div class="row">
 			<input type="hidden" name="id_aj" id="id_aj" value="<?php echo $clinicaEditar->id_aj ?>">
@@ -26,7 +26,7 @@
 			<div class="mb-3">
 				<label for="" class="form-label">Actualizar Fotografia (Opcional)</label>
 				<input type="file" class="form-control" id="nueva_foto_cli" name="nueva_foto_cli">
-				<input type="hidden" name="foto_cli_actual" value="<?php echo $clinicaEditar->fotografia; ?>">
+				<input type="hidden" id="foto_cli_actual" name="foto_cli_actual" value="<?php echo $clinicaEditar->fotografia; ?>">
 			</div>
 		</div>
 		<div class="row">

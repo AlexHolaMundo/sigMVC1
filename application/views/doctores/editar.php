@@ -1,5 +1,5 @@
 <div class="container">
-	<form action="<?php echo site_url('doctores/actualizarDoctor'); ?>" class="m-4" method="post" enctype="multipart/form-data">
+	<form action="<?php echo site_url('doctores/actualizarDoctor'); ?>" class="m-4" method="post" enctype="multipart/form-data" id="formDoctores">
 		<h3 class="text-center">Editar Doctor</h3>
 		<input type="hidden" name="id_WATT" id="id_WATT" value="<?php echo $doctorEditar->id_WATT ?>">
 		<div class="row">
