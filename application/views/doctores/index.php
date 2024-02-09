@@ -45,7 +45,7 @@
 							<?php endif; ?>
 						</td>
 						<td class="text-center">
-							<a href="<?php echo site_url('doctores/borrar/') . $doctor->id_WATT; ?>" class=" btn btn-outline-danger" title="Eliminar">
+							<a href="<?php echo site_url('doctores/borrar/') . $doctor->id_WATT; ?>" class=" btn btn-outline-danger delete-btn" title="Eliminar">
 								<i class="fa-solid fa-trash"></i>
 							</a>
 							<a href="<?php echo site_url('doctores/editar/') . $doctor->id_WATT; ?>" class="btn btn-outline-warning" title="Editar"><i class="fa-solid fa-pen-to-square"></i></a>

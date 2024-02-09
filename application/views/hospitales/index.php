@@ -40,7 +40,7 @@
 							<?php endif; ?>
 						</td>
 						<td class="text-center">
-							<a href="<?php echo site_url('hospitales/borrar/') . $hospital->id_hos; ?>" class=" btn btn-outline-danger" title="Eliminar">
+							<a href="<?php echo site_url('hospitales/borrar/') . $hospital->id_hos; ?>" class=" btn btn-outline-danger delete-btn" title="Eliminar">
 								<i class="fa-solid fa-trash"></i>
 							</a>
 							<a href="<?php echo site_url('hospitales/editar/') . $hospital->id_hos; ?>" class=" btn btn-outline-warning" title="Editar">

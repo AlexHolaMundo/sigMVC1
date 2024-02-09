@@ -70,16 +70,42 @@
 		</div>
 	</nav>
 	<div class="container-fluid">
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('.delete-btn').on('click', function(e) {
+					e.preventDefault();
+					var url = $(this).attr('href');
+					var confirmationMessage = $(this).data('confirm-message') || "¿Estás seguro de que deseas eliminar este registro?";
+					Swal.fire({
+						title: "CONFIRMACIÓN",
+						text: confirmationMessage,
+						icon: "question",
+						showCancelButton: true,
+						confirmButtonColor: "#3085d6",
+						cancelButtonColor: "#d33",
+						confirmButtonText: "Sí",
+						cancelButtonText: "No"
+					}).then((result) => {
+						if (result.isConfirmed) {
+							window.location.href = url;
+						}
+					});
+				});
+			});
+		</script>
 		<?php if ($this->session->flashdata('alerta')) : ?>
 			<script>
-				Swal.fire({
-					title: "Exito!",
-					text: "<?php echo $this->session->flashdata('alerta') ?>",
-					icon: "success",
+				$(document).ready(function() {
+					Swal.fire({
+						title: "Éxito!",
+						text: "<?php echo $this->session->flashdata('alerta') ?>",
+						icon: "success",
+					});
 				});
 			</script>
 			<?php $this->session->set_flashdata('alerta', '') ?>
 		<?php endif ?>
+
 		<!-- Bootstrap Fileinput JS -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.8/js/fileinput.min.js"></script>
 		<!-- español fileinput -->
